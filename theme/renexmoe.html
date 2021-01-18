@@ -406,26 +406,64 @@
   </p>
 </video>
 <script type="text/javascript">
-  var baseUrl = window.location.origin;
-</script>
-  <br>
+  const url = window.location.origin + "<!--FileDownUrl-->";
+  let player_items = [
+    {
+      text: 'PotPlayer',
+      href: `potplayer://${url}`
+    },
+    {
+      text: 'nPlayer',
+      href: `nplayer-${url}`,
+    },
+    {
+      text: 'MXPlayer(Free)',
+      href: `intent:${url}#Intent;package=com.mxtech.videoplayer.ad;S.title=${path};end`,
+    },
+    {
+      text: 'MXPlayer(Pro)',
+      href: `intent:${url}#Intent;package=com.mxtech.videoplayer.pro;S.title=${path};end`,
+    },
+    {
+      text: 'VLC',
+      href: `vlc://${url}`,
+    }
+  ]
+    .map(it => `<li class="mdui-menu-item"><a href="${it.href}" class="mdui-ripple">${it.text}</a></li>`)
+    .join('');
+  player_items += `<li class="mdui-divider"></li>
+                   <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>`;
+  const playBtn = `
       <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
         <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
       </button>
-      <ul class="mdui-menu" id="player-items">
-        <li class="mdui-menu-item"><a href="potplayer://<%=`${baseUrl}`%>/<!--FileDownUrl-->" class="mdui-ripple">PotPlayer</a></li>
-        <li class="mdui-divider"></li>
-        <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>
-      </ul>
+      <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
+
+  const content = `
+<div class="mdui-container-fluid">
+  <br>
+  <video class="mdui-video-fluid mdui-center" preload controls>
+    <source src="${url}" type="video/mp4">
+  </video>
+  <br>${playBtn}
   <!-- 固定標籤 -->
   <div class="mdui-textfield">
     <label class="mdui-textfield-label">下載網址</label>
-    <input class="mdui-textfield-input" type="text" value="<!--FileDownUrl-->"/>
+    <input class="mdui-textfield-input" type="text" value="${url}"/>
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label">HTML 引用網址</label>
-    <textarea class="mdui-textfield-input"><video><source src="<!--FileDownUrl-->" type="video/mp4"></video></textarea>
+    <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>
+</div>
+<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
+  `;
+  $('#content').html(content);
+  $('#copy-link').on('click', () => {
+    copyToClipboard(url);
+    mdui.snackbar('已複製到剪貼簿!');
+  });
+</script>
 </div>
 
 <!--IsvideoFileEnd-->
