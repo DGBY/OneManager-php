@@ -443,12 +443,16 @@ function proxy_replace_domain($url, $domainforproxy)
 function isHideFile($name)
 {
     $FunctionalityFile = [
+        'head.md',
+        'readme.md',
+        'head.omf',
         'HEAD.md',
         'README.md',
         'head.omf',
         'foot.omf',
         'favicon.ico',
         'index.html',
+        '.password',
     ];
 
     if ($name == getConfig('passfile')) return true;
