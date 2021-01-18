@@ -404,9 +404,11 @@
     Your browser doesn't support HTML5 video. Here is a
     <a href="<!--FileDownUrl-->">link to the video</a> instead.
   </p>
+  javascript:file_video("<!--FileDownUrl-->")
 </video>
 <script type="text/javascript">
-  const url = window.location.origin + "<!--FileDownUrl-->";
+function file_video(path) {
+  const url = window.location.origin + path;
   let player_items = [
     {
       text: 'PotPlayer',
@@ -463,6 +465,7 @@
     copyToClipboard(url);
     mdui.snackbar('已複製到剪貼簿!');
   });
+}
 </script>
 </div>
 
