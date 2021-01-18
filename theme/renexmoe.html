@@ -33,7 +33,7 @@
   }
 </style>
 <script>
-  window.disableddarkmode = true;
+  window.disableddarkmode = false;
 </script>
 <!--BackgroundEnd-->
 
@@ -47,7 +47,7 @@
   <div class="mdui-toolbar">
   <span
     class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
-    mdui-tooltip="{content: '菜单'}"
+    mdui-tooltip="{content: '選單'}"
     onclick='mdui.$("body").toggleClass("mdui-drawer-body-left");'
     id="toggle-drawer"
     ><i class="mdui-icon material-icons">menu</i></span
@@ -73,7 +73,7 @@
   <!--AdminStart--><a
     href="javascript:;"
     class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up refresh"
-    mdui-tooltip="{content: '刷新缓存'}"
+    mdui-tooltip="{content: '刷新快取'}"
     ><i class="mdui-icon material-icons">refresh</i></a
   >
   <!--AdminEnd-->
@@ -90,7 +90,7 @@
   mdui-dialog="{target: '#login_input'}"
 >
   <a class="mdui-list-item-icon mdui-icon material-icons">account_circle</a
-  ><a class="mdui-list-item-content">登录</a>
+  ><a class="mdui-list-item-content">登錄</a>
 </li>
 <!--LoginEnd-->
 <!--AdminStart-->
@@ -105,11 +105,11 @@
   id="logout"
 >
   <i class="mdui-icon material-icons mdui-list-item-icon">exit_to_app</i>
-  <div class="mdui-list-item-content">退出登陆</div>
+  <div class="mdui-list-item-content">退出登陸</div>
 </li>
 <li class="mdui-list-item mdui-ripple" id="checkupdate">
   <i class="mdui-icon material-icons mdui-list-item-icon">update</i>
-  <div class="mdui-list-item-content">检查主题更新</div>
+  <div class="mdui-list-item-content">檢查主題更新</div>
 </li>
 <div class="mdui-divider"></div>
 <!--AdminEnd-->
@@ -157,7 +157,7 @@
       id="about_theme"
     >
       <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
-      <div class="mdui-list-item-content">关于该主题</div>
+      <div class="mdui-list-item-content">關於該主題</div>
     </li>
   </div>
 </div>
@@ -167,14 +167,14 @@
   <li class="mdui-menu-item">
     <a href="javascript:;" class="mdui-ripple back"
       ><i class="mdui-menu-item-icon mdui-icon material-icons">arrow_back</i
-      >返回上一页</a
+      >返回上一頁</a
     >
   </li>
   <!--AdminStart-->
   <li class="mdui-menu-item">
     <a href="javascript:;" class="mdui-ripple refresh"
       ><i class="mdui-menu-item-icon mdui-icon material-icons">refresh</i
-      >刷新缓存</a
+      >刷新緩存</a
     >
   </li>
   <!--AdminEnd-->
@@ -182,18 +182,18 @@
 <i id="mouseplace" style="position: absolute"></i>
 <form action="?admin" method="post">
   <div class="mdui-dialog" id="login_input">
-    <div class="mdui-dialog-title">登录</div>
+    <div class="mdui-dialog-title">登錄</div>
     <div class="mdui-dialog-content" style="height: 108px">
       <div class="mdui-textfield mdui-textfield-floating-label">
         <i class="mdui-icon material-icons">lock</i
-        ><label class="mdui-textfield-label">密码</label
+        ><label class="mdui-textfield-label">密碼</label
         ><input class="mdui-textfield-input" name="password1" type="new-password" />
       </div>
     </div>
     <div class="mdui-dialog-actions">
       <button class="mdui-btn mdui-ripple" mdui-dialog-close="">取消</button
-      ><button class="mdui-btn mdui-ripple" type="submit" value="登录">
-        登录
+      ><button class="mdui-btn mdui-ripple" type="submit" value="登錄">
+        登錄
       </button>
     </div>
   </div>
@@ -203,7 +203,7 @@
   <br />
   <center>
     <div class="mdui-typo-title">
-      这是一个受保护的文件夹，您需要提供访问密码才能查看。
+      這是一個受保護的資料夾，您需要提供訪問密碼才能查看。
     </div>
   </center>
   <form action="" method="post">
@@ -447,10 +447,10 @@
 >
 <script>
   document.querySelector("#admin-menu").innerHTML +=
-    '<li class="mdui-menu-item"><a href="javascript:void(0);"class="mdui-ripple downloadurl"><i class="mdui-menu-item-icon mdui-icon material-icons">cloud_download</i>下载链接</a></li>';
+    '<li class="mdui-menu-item"><a href="javascript:void(0);"class="mdui-ripple downloadurl"><i class="mdui-menu-item-icon mdui-icon material-icons">cloud_download</i>下載連結</a></li>';
   document.querySelector(
     ".mdui-toolbar"
-  ).innerHTML += `<a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up downloadurl" mdui-tooltip="{content: '下载链接'}"><i class="mdui-icon material-icons">cloud_download</i></a>`;
+  ).innerHTML += `<a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up downloadurl" mdui-tooltip="{content: '下載連結'}"><i class="mdui-icon material-icons">cloud_download</i></a>`;
 </script>
 <!--IsFileEnd-->
 
