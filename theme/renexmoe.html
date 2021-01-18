@@ -396,40 +396,6 @@
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
-  const url = window.location.origin + path;
-  let player_items = [
-    {
-      text: 'PotPlayer',
-      href: `potplayer://"<!--FileDownUrl-->"`
-    },
-    {
-      text: 'nPlayer',
-      href: `nplayer-"<!--FileDownUrl-->"`,
-    },
-    {
-      text: 'MXPlayer(Free)',
-      href: `intent:"<!--FileDownUrl-->"#Intent;package=com.mxtech.videoplayer.ad;S.title="<!--FileDownUrl-->";end`,
-    },
-    {
-      text: 'MXPlayer(Pro)',
-      href: `intent:"<!--FileDownUrl-->"#Intent;package=com.mxtech.videoplayer.pro;S.title="<!--FileDownUrl-->";end`,
-    },
-    {
-      text: 'VLC',
-      href: `vlc://"<!--FileDownUrl-->"`,
-    }
-  ]
-    .map(it => `<li class="mdui-menu-item"><a href="${it.href}" class="mdui-ripple">${it.text}</a></li>`)
-    .join('');
-  player_items += `<li class="mdui-divider"></li>
-                   <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>`;
-  const playBtn = `
-      <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
-        <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
-      </button>
-      <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
-
-  const content = `
 <div class="mdui-container-fluid">
   <br>
 <video class="mdui-video-fluid" controls style="margin-top: 20px">
@@ -439,7 +405,15 @@
     <a href="<!--FileDownUrl-->">link to the video</a> instead.
   </p>
 </video>
-  <br>${playBtn}
+  <br>
+      <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
+        <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
+      </button>
+      <ul class="mdui-menu" id="player-items">
+        <li class="mdui-menu-item"><a href="potplayer://<!--FileDownUrl-->" class="mdui-ripple">"PotPlayer"</a></li>
+        <li class="mdui-divider"></li>
+        <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>
+      </ul>
   <!-- 固定標籤 -->
   <div class="mdui-textfield">
     <label class="mdui-textfield-label">下載網址</label>
