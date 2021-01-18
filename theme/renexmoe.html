@@ -408,6 +408,13 @@
 </video>
   <br>
 <script type="text/javascript">
+  function copyToClipboard(str) {
+    const $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(str).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
@@ -435,7 +442,7 @@
     .map(it => `<li class="mdui-menu-item"><a href="${it.href}" class="mdui-ripple">${it.text}</a></li>`)
     .join('');
   player_items += `<li class="mdui-divider"></li>
-                   <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>`;
+                   <li class="mdui-menu-item" onClick="copyUrl()"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>`;
   const playBtn = `
       <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
         <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
@@ -452,11 +459,11 @@
     <label class="mdui-textfield-label">HTML 引用網址</label>
     <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
+  document.write(content)
   $('#copy-link').on('click', () => {
     copyToClipboard(url);
     mdui.snackbar('已複製到剪貼簿!');
   });
-  document.write(content)
 </script>
 </div>
 
