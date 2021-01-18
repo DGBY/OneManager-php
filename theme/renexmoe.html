@@ -406,6 +406,7 @@
   </p>
   javascript:file_video("<!--FileDownUrl-->")
 </video>
+  <br>
 <script type="text/javascript">
   var baseUrl = window.location.origin;
   var url = `${baseUrl}/<!--FileDownUrl-->`
@@ -440,7 +441,18 @@
         <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
-  document.write(playBtn)
+  const content = `
+  <br>${playBtn}
+  <!-- 固定標籤 -->
+  <div class="mdui-textfield">
+    <label class="mdui-textfield-label">下載網址</label>
+    <input class="mdui-textfield-input" type="text" value="${url}"/>
+  </div>
+  <div class="mdui-textfield">
+    <label class="mdui-textfield-label">HTML 引用網址</label>
+    <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
+  </div>`;
+  document.write(content)
 </script>
 </div>
 
