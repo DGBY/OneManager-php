@@ -407,7 +407,8 @@
   javascript:file_video("<!--FileDownUrl-->")
 </video>
 <script type="text/javascript">
-  document.write("<p>TEST</p>");
+  var baseUrl = window.location.origin;
+  document.write(baseUrl);
 </script>
 </div>
 
