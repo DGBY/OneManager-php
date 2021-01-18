@@ -443,8 +443,8 @@ function proxy_replace_domain($url, $domainforproxy)
 function isHideFile($name)
 {
     $FunctionalityFile = [
-        'head.md',
-        'readme.md',
+        'HEAD.md',
+        'README.md',
         'head.omf',
         'foot.omf',
         'favicon.ico',
@@ -2239,8 +2239,8 @@ function render_list($path = '', $files = [])
         $tmp = splitfirst($html, '<!--HeadmdStart-->');
         $html = $tmp[0];
         $tmp = splitfirst($tmp[1], '<!--HeadmdEnd-->');
-        if (isset($files['list']['head.md'])) {
-            $headmd = str_replace('<!--HeadmdContent-->', get_content(spurlencode(path_format($path . '/head.md'), '/'))['content']['body'], $tmp[0]);
+        if (isset($files['list']['HEAD.md'])) {
+            $headmd = str_replace('<!--HeadmdContent-->', get_content(spurlencode(path_format($path . '/HEAD.md'), '/'))['content']['body'], $tmp[0]);
             $html .= $headmd . $tmp[1];
             while (strpos($html, '<!--HeadmdStart-->')) {
                 $html = str_replace('<!--HeadmdStart-->', '', $html);
@@ -2272,8 +2272,8 @@ function render_list($path = '', $files = [])
         $tmp = splitfirst($html, '<!--ReadmemdStart-->');
         $html = $tmp[0];
         $tmp = splitfirst($tmp[1], '<!--ReadmemdEnd-->');
-        if (isset($files['list']['readme.md'])) {
-            $Readmemd = str_replace('<!--ReadmemdContent-->', get_content(spurlencode(path_format($path . '/readme.md'),'/'))['content']['body'], $tmp[0]);
+        if (isset($files['list']['README.md'])) {
+            $Readmemd = str_replace('<!--ReadmemdContent-->', get_content(spurlencode(path_format($path . '/README.md'),'/'))['content']['body'], $tmp[0]);
             $html .= $Readmemd . $tmp[1];
             while (strpos($html, '<!--ReadmemdStart-->')) {
                 $html = str_replace('<!--ReadmemdStart-->', '', $html);
@@ -2303,7 +2303,7 @@ function render_list($path = '', $files = [])
         $tmp = splitfirst($html, '<!--MdRequireStart-->');
         $html = $tmp[0];
         $tmp = splitfirst($tmp[1], '<!--MdRequireEnd-->');
-        if (isset($files['list']['head.md'])||isset($files['list']['readme.md'])) {
+        if (isset($files['list']['HEAD.md'])||isset($files['list']['README.md'])) {
             $html .= $tmp[0] . $tmp[1];
         } else $html .= $tmp[1];
 
