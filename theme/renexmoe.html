@@ -396,6 +396,9 @@
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
+<script>
+  const baseUrl = window.location.origin;
+</script>
 <div class="mdui-container-fluid">
   <br>
 <video class="mdui-video-fluid" controls style="margin-top: 20px">
@@ -410,7 +413,7 @@
         <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
       </button>
       <ul class="mdui-menu" id="player-items">
-        <li class="mdui-menu-item"><a href="potplayer://<!--FileDownUrl-->" class="mdui-ripple">"PotPlayer"</a></li>
+        <li class="mdui-menu-item"><a href="potplayer://${baseUrl}/<!--FileDownUrl-->" class="mdui-ripple">PotPlayer</a></li>
         <li class="mdui-divider"></li>
         <li class="mdui-menu-item"><a id="copy-link" class="mdui-ripple">複製鏈接</a></li>
       </ul>
