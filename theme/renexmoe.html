@@ -408,13 +408,6 @@
 </video>
   <br>
 <script type="text/javascript">
-  function copyToClipboard(str) {
-    const $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val(str).select();
-    document.execCommand("copy");
-    $temp.remove();
-  }
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
@@ -460,8 +453,13 @@
     <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
   document.write(content);
-  $('#copy-link').on('click', () => {
-    copyToClipboard(url);
+  var $ = mdui.$;
+  $('#copy-link').on('click', function(){
+    navigator.clipboard.writeText(url).then(function() {
+      console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+  });
     mdui.snackbar('已複製到剪貼簿!');
   });
 </script>
