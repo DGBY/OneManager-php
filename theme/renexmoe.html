@@ -396,9 +396,6 @@
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
-<script>
-  const baseUrl = window.location.origin;
-</script>
 <div class="mdui-container-fluid">
   <br>
 <video class="mdui-video-fluid" controls style="margin-top: 20px">
@@ -408,6 +405,9 @@
     <a href="<!--FileDownUrl-->">link to the video</a> instead.
   </p>
 </video>
+<script type="text/javascript">
+  var baseUrl = window.location.origin;
+</script>
   <br>
       <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-menu="{target:'#player-items'}">
         <i class="mdui-icon material-icons">&#xe039;</i>外部播放器播放<i class="mdui-icon material-icons">&#xe5cf;</i>
@@ -427,7 +427,6 @@
     <textarea class="mdui-textfield-input"><video><source src="<!--FileDownUrl-->" type="video/mp4"></video></textarea>
   </div>
 </div>
-
 
 <!--IsvideoFileEnd-->
  <!--IsofficeFileStart-->
