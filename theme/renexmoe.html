@@ -463,7 +463,11 @@
     <label class="mdui-textfield-label">HTML 引用網址</label>
     <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
-  document.write(content)
+  document.write(content);
+  $('#copy-link').on('click', () => {
+    copyToClipboard(url);
+    mdui.snackbar('已複製到剪貼簿!');
+  });
 </script>
 </div>
 
