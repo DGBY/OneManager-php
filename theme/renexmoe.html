@@ -407,7 +407,6 @@
   javascript:file_video("<!--FileDownUrl-->")
 </video>
 <script type="text/javascript">
-function file_video(path) {
   const url = window.location.origin + path;
   let player_items = [
     {
@@ -465,7 +464,7 @@ function file_video(path) {
     copyToClipboard(url);
     mdui.snackbar('已複製到剪貼簿!');
   });
-}
+  document.write("<p>你在幹嘛。你媽媽叫你回家吃飯！</p>");
 </script>
 </div>
 
