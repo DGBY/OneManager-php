@@ -424,7 +424,7 @@ function setMarkdown(text,el) {
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
-  <div class="mdui-container-fluid"><br>
+  <div class="mdui-container-fluid" id="video-info"><br>
   <video class="mdui-video-fluid mdui-center" preload controls style="margin-top: 20px">
     <source src="<!--FileDownUrl-->" />
     <p>
@@ -433,8 +433,6 @@ function setMarkdown(text,el) {
     </p>
     javascript:file_video("<!--FileDownUrl-->")
   </video>
-    <div id="video-info">
-    </div>
   </div>
 <script>
   function CopyToClipboard() {
@@ -480,7 +478,7 @@ function setMarkdown(text,el) {
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
     <textarea class="mdui-textfield-input mdui-text-color-theme-300"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
-  document.getElementById("video-info").innerHTML = content;
+  document.getElementById("video-info").innerHTML += content;
 </script>
 
 
