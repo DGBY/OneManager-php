@@ -246,7 +246,10 @@
   var showdown  = require('showdown'),
     converter = new showdown.Converter(),
     text      = '# hello, markdown!',
-    html      = converter.makeHtml(`<!--HeadmdContent-->`);
+    html      = converter.makeHtml(text);
+    document.write(html);
+    console.log(html);
+    html      = converter.makeHtml("<!--HeadmdContent-->");
     document.write(html);
     console.log(html);
 </script>
