@@ -241,20 +241,18 @@
   style="padding: 20px; margin: 20px 0"
   id="head"
 >
-<script type="text/javascript">
-  var showdown  = require('showdown'),
-    converter = new showdown.Converter(),
-    text      = '# hello, markdown!',
-    html      = converter.makeHtml(text);
-    document.write(html);
-    console.log(html);
-</script>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script>
+  var conv = new showdown.Converter();
+  var txt = `<!--ReadmemdContent-->`;
+  console.log(txt);
+  document.getElementById('head').innerHTML = conv.makeHtml(txt);
+</script>
 <!--HeadmdEnd-->
 <!--MdRequireStart-->
 <link rel="stylesheet" href="//unpkg.zhimg.com/github-markdown-css@3.0.1/github-markdown.css">
 <script type="text/javascript" src="//unpkg.zhimg.com/marked@0.6.2/marked.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <!--MdRequireEnd-->
 
 <div
