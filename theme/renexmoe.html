@@ -241,14 +241,19 @@
   style="padding: 20px; margin: 20px 0"
   id="head"
 >
-<script type="text/javascript">
-  var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
-  var result = md.render(`<!--HeadmdContent-->`);
-  document.write(result);
-</script>
-
 </div>
+<script type="text/javascript">
+  function markdown(el, data) {
+    if (window.md == undefined) {
+      window.md = window.markdownit({"html": true});
+      markdown(el, data);
+    } else {
+      var html = md.render(data);
+      $(el).show().html(html);
+    }
+  }
+  markdown("#head", `<!--HeadmdContent-->`);
+</script>
 <!--HeadmdEnd-->
 <!--MdRequireStart-->
 <link rel="stylesheet" href="//unpkg.zhimg.com/github-markdown-css@3.0.1/github-markdown.css">
