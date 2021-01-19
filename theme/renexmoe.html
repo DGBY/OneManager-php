@@ -18,6 +18,15 @@
 <title><!--Title--></title>
 <meta name="description" content="A Onemanager-PHP site with Theme-renexmoe" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.3/css/app.css"><meta name="theme-color" content="#fff" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script>
+function setMarkdown(text,el) {
+  var conv = new showdown.Converter();
+  console.log(text);
+  document.getElementById(el).innerHTML = conv.makeHtml(text);
+}
+
+</script>
 <!--BackgroundStart-->
 <style>
   body {
@@ -231,7 +240,6 @@
 
   <!--IsFolderStart-->
 <!--MdRequireStart-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <link rel="stylesheet" href="//unpkg.zhimg.com/github-markdown-css@3.0.1/github-markdown.css">
 <script type="text/javascript" src="//unpkg.zhimg.com/marked@0.6.2/marked.min.js"></script>
 <!--MdRequireEnd-->
@@ -248,10 +256,8 @@
 >
 </div>
 <script>
-  var conv = new showdown.Converter();
-  var txt = `<!--HeadmdContent-->`;
-  console.log(txt);
-  document.getElementById('head').innerHTML = conv.makeHtml(txt);
+  var text = `<!--HeadmdContent-->`;
+  setMarkdown(text,'head');
 </script>
 <!--HeadmdEnd-->
 
@@ -372,16 +378,14 @@
 </div>
 <!--ReadmemdStart-->
 <div
-  class="mdui-typo mdui-shadow-3 markdown mdui-text-color-theme-200"
+  class="mdui-typo mdui-shadow-3 mdui-text-color-theme-200 markdown"
   style="padding: 20px; margin: 20px 0"
   id="readme"
 >
 </div>
 <script>
-  var conv = new showdown.Converter();
-  var txt = `<!--ReadmemdContent-->`;
-  console.log(txt);
-  document.getElementById('readme').innerHTML = conv.makeHtml(txt);
+  var text = `<!--ReadmemdContent-->`;
+  setMarkdown(text,'readme');
 </script>
 <!--ReadmemdEnd-->
 
