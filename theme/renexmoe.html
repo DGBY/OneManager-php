@@ -243,16 +243,12 @@
 >
 </div>
 <script type="text/javascript">
-  function markdown(el, data) {
-    if (window.md == undefined) {
-      window.md = window.markdownit({"html": true});
-      markdown(el, data);
-    } else {
-      var html = md.render(data);
-      $(el).show().html(html);
-    }
-  }
-  markdown("#head", `<!--HeadmdContent-->`);
+  var showdown  = require('showdown'),
+    converter = new showdown.Converter(),
+    text      = '# hello, markdown!',
+    html      = converter.makeHtml(`<!--HeadmdContent-->`);
+    document.write(html);
+    console.log(html);
 </script>
 <!--HeadmdEnd-->
 <!--MdRequireStart-->
