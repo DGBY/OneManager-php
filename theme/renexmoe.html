@@ -437,6 +437,14 @@ function setMarkdown(text,el) {
     </div>
   </div>
 <script>
+  function CopyToClipboard() {
+    navigator.clipboard.writeText(url).then(function() {
+      console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+    });
+    mdui.snackbar('已複製到剪貼簿!');
+  }
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
@@ -473,16 +481,7 @@ function setMarkdown(text,el) {
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
     <textarea class="mdui-textfield-input mdui-text-color-theme-300"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
-  //document.write(content);
   document.getElementById("video-info").innerHTML = content;
-  function CopyToClipboard() {
-    navigator.clipboard.writeText(url).then(function() {
-      console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-      console.error('Async: Could not copy text: ', err);
-    });
-    mdui.snackbar('已複製到剪貼簿!');
-  }
 </script>
 
 
