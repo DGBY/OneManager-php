@@ -241,7 +241,6 @@
   style="padding: 20px; margin: 20px 0"
   id="head"
 >
-</div>
 <script type="text/javascript">
   var showdown  = require('showdown'),
     converter = new showdown.Converter(),
@@ -249,10 +248,8 @@
     html      = converter.makeHtml(text);
     document.write(html);
     console.log(html);
-    html      = converter.makeHtml("<!--HeadmdContent-->");
-    document.write(html);
-    console.log(html);
 </script>
+</div>
 <!--HeadmdEnd-->
 <!--MdRequireStart-->
 <link rel="stylesheet" href="//unpkg.zhimg.com/github-markdown-css@3.0.1/github-markdown.css">
