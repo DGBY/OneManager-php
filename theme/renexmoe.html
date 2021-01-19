@@ -40,7 +40,7 @@
 
   </head>
   <body
-    class="mdui-appbar-with-toolbar mdui-theme-layout-auto mdui-loaded mdui-theme-accent-teal"
+    class="mdui-appbar-with-toolbar mdui-theme-layout-dark mdui-loaded mdui-theme-primary-grey mdui-theme-accent-teal"
   >
     <header
   class="mdui-appbar mdui-appbar-fixed mdui-shadow-0 mdui-appbar-scroll-toolbar-hide"
@@ -188,12 +188,12 @@
 <i id="mouseplace" style="position: absolute"></i>
 <form action="?admin" method="post">
   <div class="mdui-dialog" id="login_input">
-    <div class="mdui-dialog-title">登錄</div>
+    <div class="mdui-dialog-title mdui-text-color-theme">登錄</div>
     <div class="mdui-dialog-content" style="height: 108px">
       <div class="mdui-textfield mdui-textfield-floating-label">
-        <i class="mdui-icon material-icons">lock</i
-        ><label class="mdui-textfield-label">密碼</label
-        ><input class="mdui-textfield-input" name="password1" type="new-password" />
+        <i class="mdui-icon material-icons mdui-text-color-theme">lock</i
+        ><label class="mdui-textfield-label mdui-text-color-theme">密碼</label
+        ><input class="mdui-textfield-input " name="password1" type="new-password" />
       </div>
     </div>
     <div class="mdui-dialog-actions">
@@ -208,7 +208,7 @@
 <div class="mdui-col-md-6 mdui-col-offset-md-3">
   <br /><br /><br />
   <center>
-    <div class="mdui-typo-title">
+    <div class="mdui-typo-title mdui-text-color-theme">
       此資料夾已被加密，請輸入密碼查看。
     </div>
   </center>
@@ -306,14 +306,14 @@
 >
   <div class="mdui-row mdui-col-sm-12">
     <a href="<!--FileEncodeReplaceUrl-->/">
-      <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+      <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-color-theme mdui-text-truncate">
         <i class="mdui-icon material-icons">folder_open</i
         ><span> <!--FileEncodeReplaceName--></span>
       </div>
-      <div class="mdui-col-sm-3 mdui-text-right">
+      <div class="mdui-col-sm-3 mdui-text-color-theme mdui-text-right">
         <!--lastModifiedDateTime-->
       </div>
-      <div class="mdui-col-sm-2 mdui-text-right">
+      <div class="mdui-col-sm-2 mdui-text-color-theme mdui-text-right">
         <!--size-->
       </div>
     </a>
@@ -330,7 +330,7 @@
   data-readypreview="<!--FileExt-->"
 >
   <div class="mdui-row mdui-col-sm-12">
-    <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+    <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-color-theme mdui-text-truncate">
       <a
         class="<!--FileExtType-->"
         data-name="<!--FileEncodeReplaceName-->"
@@ -341,14 +341,14 @@
         <span> <!--FileEncodeReplaceName--></span>
       </a>
     </div>
-    <div class="mdui-col-sm-3 mdui-text-right">
+    <div class="mdui-col-sm-3 mdui-text-color-theme mdui-text-right">
       <!--lastModifiedDateTime-->
     </div>
-    <div class="mdui-col-sm-2 mdui-text-right">
+    <div class="mdui-col-sm-2 mdui-text-color-theme mdui-text-right">
       <!--size-->
     </div>
   </div>
-  <div class="forcedownload mdui-text-right">
+  <div class="forcedownload mdui-text-color-theme mdui-text-right">
     <a
       title="<!--constStr@Download-->"
       aria-label="Download"
@@ -437,11 +437,11 @@
   <br>${playBtn}
   <!-- 固定標籤 -->
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">下載網址</label>
+    <label class="mdui-textfield-label mdui-text-color-theme">下載網址</label>
     <input class="mdui-textfield-input" type="text" value="${url}"/>
   </div>
   <div class="mdui-textfield">
-    <label class="mdui-textfield-label">HTML 引用網址</label>
+    <label class="mdui-textfield-label mdui-text-color-theme">HTML 引用網址</label>
     <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
   document.write(content);
