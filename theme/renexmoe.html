@@ -424,21 +424,6 @@ function setMarkdown(text,el) {
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
-  <div class="mdui-container-fluid"><br>
-  <video class="mdui-video-fluid mdui-center" controls style="margin-top: 20px">
-    <source src="<!--FileDownUrl-->" />
-    <p>
-      Your browser doesn't support HTML5 video. Here is a
-      <a href="<!--FileDownUrl-->">link to the video</a> instead.
-    </p>
-    javascript:file_video("<!--FileDownUrl-->")
-  </video>
-  <div id="video-info"><br>
-      <div class="mdui-text-color-theme-accent mdui-text-center">
-        若未顯示外部播放選單，請重新整理。
-      </div>
-  </div>
-  </div>
 <script>
   function CopyToClipboard() {
     navigator.clipboard.writeText(url).then(function() {
@@ -485,7 +470,21 @@ function setMarkdown(text,el) {
   </div>`;
   document.getElementById("video-info").innerHTML = content;
 </script>
-
+  <div class="mdui-container-fluid"><br>
+  <video class="mdui-video-fluid mdui-center" controls style="margin-top: 20px">
+    <source src="<!--FileDownUrl-->" />
+    <p>
+      Your browser doesn't support HTML5 video. Here is a
+      <a href="<!--FileDownUrl-->">link to the video</a> instead.
+    </p>
+    javascript:file_video("<!--FileDownUrl-->")
+  </video>
+  <div id="video-info"><br>
+      <div class="mdui-text-color-theme-accent mdui-text-center">
+        若未顯示外部播放選單，請重新整理。
+      </div>
+  </div>
+  </div>
 
 <!--IsvideoFileEnd-->
  <!--IsofficeFileStart-->
