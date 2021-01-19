@@ -241,12 +241,19 @@
   style="padding: 20px; margin: 20px 0"
   id="head"
 >
-<!--HeadmdContent-->
+<script type="text/javascript">
+  var converter = new showdown.Converter(),
+    text      = `<!--HeadmdContent-->`,
+    html      = converter.makeHtml(text);
+  document.write(html);
+</script>>
+
 </div>
 <!--HeadmdEnd-->
 <!--MdRequireStart-->
 <link rel="stylesheet" href="//unpkg.zhimg.com/github-markdown-css@3.0.1/github-markdown.css">
 <script type="text/javascript" src="//unpkg.zhimg.com/marked@0.6.2/marked.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <!--MdRequireEnd-->
 
 <div
@@ -258,7 +265,7 @@
       <div class="mdui-row mdui-col-xs-12">
         <div class="mdui-col-xs-12 mdui-col-sm-7">
           <!--constStr@File--><i
-            class="mdui-icon material-icons icon-sort"
+            class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="name"
             data-order="downward"
             >expand_more</i
@@ -266,7 +273,7 @@
         </div>
         <div class="mdui-col-sm-3 mdui-text-right">
           <!--constStr@EditTime--><i
-            class="mdui-icon material-icons icon-sort"
+            class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="date"
             data-order="downward"
             >expand_more</i
@@ -274,7 +281,7 @@
         </div>
         <div class="mdui-col-sm-2 mdui-text-right">
           <!--constStr@Size--><i
-            class="mdui-icon material-icons icon-sort"
+            class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="size"
             data-order="downward"
             >expand_more</i
@@ -381,9 +388,21 @@
 
 <!--IsFolderEnd-->
  <!--IsFileStart-->
-<div id="file" class="mdui-shadow-3" style="padding: 5px;margin: 20px 0px;padding: 20px;border-radius: 8px;">
+<div id="file" class="mdui-shadow-3 mdui-text-color-theme-200" style="padding: 5px;margin: 20px 0px;padding: 20px;border-radius: 8px;">
   <!--IsimgFileStart-->
 <img class="mdui-img-fluid mdui-center mdui-m-t-5" src="<!--FileDownUrl-->" />
+<br><div class="mdui-textfield">
+    <label class="mdui-textfield-label mdui-text-color-theme-accent">下載網址</label>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="<!--FileDownUrl-->"/>
+  </div>
+  <div class="mdui-textfield">
+    <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
+    <textarea class="mdui-textfield-input mdui-text-color-theme-300"><img src="<!--FileDownUrl-->" /></textarea>
+  </div>
+  <div class="mdui-textfield">
+    <label class="mdui-textfield-label mdui-text-color-theme-accent">Markdown 引用網址</label>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="![](<!--FileDownUrl-->)"/>
+  </div>
 <!--IsimgFileEnd-->
  <!--IsmusicFileStart-->
 <audio
