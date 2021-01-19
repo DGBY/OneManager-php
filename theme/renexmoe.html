@@ -242,11 +242,11 @@
   id="head"
 >
 <script type="text/javascript">
-  var converter = new showdown.Converter(),
-    text      = `<!--HeadmdContent-->`,
-    html      = converter.makeHtml(text);
-  document.write(html);
-</script>>
+  var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
+  var result = md.render(`<!--HeadmdContent-->`);
+  document.write(result);
+</script>
 
 </div>
 <!--HeadmdEnd-->
@@ -263,7 +263,7 @@
   <ul class="mdui-list">
     <li class="mdui-list-item mdui-ripple">
       <div class="mdui-row mdui-col-xs-12">
-        <div class="mdui-col-xs-12 mdui-col-sm-7">
+        <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-color-theme-200">
           <!--constStr@File--><i
             class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="name"
@@ -271,7 +271,7 @@
             >expand_more</i
           >
         </div>
-        <div class="mdui-col-sm-3 mdui-text-right">
+        <div class="mdui-col-sm-3 mdui-text-right mdui-text-color-theme-200">
           <!--constStr@EditTime--><i
             class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="date"
@@ -279,7 +279,7 @@
             >expand_more</i
           >
         </div>
-        <div class="mdui-col-sm-2 mdui-text-right">
+        <div class="mdui-col-sm-2 mdui-text-right mdui-text-color-theme-200">
           <!--constStr@Size--><i
             class="mdui-icon material-icons icon-sort mdui-text-color-theme-200"
             data-sort="size"
@@ -417,7 +417,7 @@
   <!--IsvideoFileStart-->
 <div class="mdui-container-fluid">
   <br>
-<video class="mdui-video-fluid" controls style="margin-top: 20px">
+<video class="mdui-video-fluid mdui-center" preload controls style="margin-top: 20px">
   <source src="<!--FileDownUrl-->" />
   <p>
     Your browser doesn't support HTML5 video. Here is a
@@ -425,7 +425,6 @@
   </p>
   javascript:file_video("<!--FileDownUrl-->")
 </video>
-  <br>
 <script>
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
