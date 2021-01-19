@@ -237,7 +237,7 @@
 <!--HeadomfEnd-->
 <!--HeadmdStart-->
 <div
-  class="mdui-typo mdui-shadow-3 markdown"
+  class="mdui-typo mdui-shadow-3 mdui-text-color-theme-200 markdown"
   style="padding: 20px; margin: 20px 0"
   id="head"
 >
@@ -290,7 +290,7 @@
     </li>
     <!--BackArrowStart-->
     <li class="mdui-list-item mdui-ripple">
-      <div class="mdui-row mdui-col-sm-12">
+      <div class="mdui-row mdui-col-sm-12 mdui-text-color-theme-200">
         <a href="<!--BackArrowUrl-->">
           <div class="mdui-col-xs-7">
             <i class="mdui-icon material-icons">arrow_upward</i>
@@ -372,13 +372,20 @@
 </div>
 <!--ReadmemdStart-->
 <div
-  class="mdui-typo mdui-shadow-3 markdown"
+  class="mdui-typo mdui-shadow-3 markdown mdui-text-color-theme-200"
   style="padding: 20px; margin: 20px 0"
   id="readme"
 >
-<!--ReadmemdContent-->
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+<script>
+  var conv = new showdown.Converter();
+  var txt = `<!--ReadmemdContent-->`;
+  console.log(txt);
+  document.getElementById('readme').innerHTML = conv.makeHtml(txt);
+</script>
 <!--ReadmemdEnd-->
+
 <!--FootomfStart-->
 <div class="mdui-typo mdui-shadow-3" style="padding: 20px; margin: 20px 0">
   <!--FootomfContent-->
