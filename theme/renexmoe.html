@@ -424,16 +424,6 @@ function setMarkdown(text,el) {
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
-<div class="mdui-container-fluid">
-  <br>
-<video class="mdui-video-fluid mdui-center" preload controls style="margin-top: 20px">
-  <source src="<!--FileDownUrl-->" />
-  <p>
-    Your browser doesn't support HTML5 video. Here is a
-    <a href="<!--FileDownUrl-->">link to the video</a> instead.
-  </p>
-  javascript:file_video("<!--FileDownUrl-->")
-</video>
 <script>
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
@@ -461,6 +451,15 @@ function setMarkdown(text,el) {
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
   const content = `
+  <div class="mdui-container-fluid"><br>
+  <video class="mdui-video-fluid mdui-center" preload controls style="margin-top: 20px">
+    <source src="<!--FileDownUrl-->" />
+    <p>
+      Your browser doesn't support HTML5 video. Here is a
+      <a href="<!--FileDownUrl-->">link to the video</a> instead.
+    </p>
+    javascript:file_video("<!--FileDownUrl-->")
+  </video>
   <br>${playBtn}
   <!-- 固定標籤 -->
   <div class="mdui-textfield">
@@ -470,6 +469,7 @@ function setMarkdown(text,el) {
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
     <textarea class="mdui-textfield-input mdui-text-color-theme-300"><video><source src="${url}" type="video/mp4"></video></textarea>
+  </div>
   </div>`;
   document.write(content);
   function CopyToClipboard() {
@@ -481,7 +481,7 @@ function setMarkdown(text,el) {
     mdui.snackbar('已複製到剪貼簿!');
   }
 </script>
-</div>
+
 
 <!--IsvideoFileEnd-->
  <!--IsofficeFileStart-->
