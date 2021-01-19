@@ -256,7 +256,7 @@ function setMarkdown(text,el) {
 ><!--HeadmdContent-->
 </div>
 <script>
-  var text = document.getElementById("head").value;
+  var text = document.getElementById("head").innerHTML;
   setMarkdown(text,'head');
 </script>
 <!--HeadmdEnd-->
@@ -384,7 +384,7 @@ function setMarkdown(text,el) {
 ><!--ReadmemdContent-->
 </div>
 <script>
-  var text = document.getElementById("readme").value;
+  var text = document.getElementById("readme").innerHTML;
   setMarkdown(text,'readme');
 </script>
 <!--ReadmemdEnd-->
