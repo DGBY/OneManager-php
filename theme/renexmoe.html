@@ -20,19 +20,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/186526/renexmoe-cdn@v1.1.3/css/app.css"><meta name="theme-color" content="#fff" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <script>
-  function setMarkdown(text,el) {
-    var conv = new showdown.Converter();
-    console.log(text);
-    document.getElementById(el).innerHTML = conv.makeHtml(text);
-  }
-  function CopyToClipboard() {
-    navigator.clipboard.writeText(url).then(function() {
-      console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-      console.error('Async: Could not copy text: ', err);
-    });
-    mdui.snackbar('已複製到剪貼簿!');
-  }
+function setMarkdown(text,el) {
+  var conv = new showdown.Converter();
+  console.log(text);
+  document.getElementById(el).innerHTML = conv.makeHtml(text);
+}
+
 </script>
 <!--BackgroundStart-->
 <style>
@@ -442,6 +435,14 @@
   </video>
   </div>
 <script>
+  function CopyToClipboard() {
+    navigator.clipboard.writeText(url).then(function() {
+      console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+    });
+    mdui.snackbar('已複製到剪貼簿!');
+  }
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
