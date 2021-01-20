@@ -406,17 +406,20 @@ function setMarkdown(text,el) {
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
-    <textarea class="mdui-textfield-input mdui-text-color-theme-300"><img src="<!--FileDownUrl-->" /></textarea>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" id="url_html" value="<img src=<!--FileDownUrl--> />"/>
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">Markdown 引用網址</label>
-    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="![](<!--FileDownUrl-->)"/>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" id="url_md" value="![](<!--FileDownUrl-->)"/>
   </div>
 <script>
   var $url = document.getElementById('url');
   if ($url) {
-    $url.value = location.protocol + '//' + location.host + $url.value;
-    }
+    var url = location.protocol + '//' + location.host + $url.value;
+    $url.value = url;
+    document.getElementById('url_html').value = "<img src=\""+ url +"\" />";
+    document.getElementById('url_md').value = "![](" + url +")";
+  }
 </script>
 <!--IsimgFileEnd-->
  <!--IsmusicFileStart-->
@@ -439,7 +442,7 @@ function setMarkdown(text,el) {
     </p>
     javascript:file_video("<!--FileDownUrl-->")
   </video>
-  <div id="video-info" onload="onloadTest();"><br>
+  <div id="video-info"><br>
       <div class="mdui-text-color-theme-accent mdui-text-center" href="/" >
         若未顯示外部播放選單，請重新整理。
       </div>
