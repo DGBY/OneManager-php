@@ -402,15 +402,15 @@ function setMarkdown(text,el) {
 <img class="mdui-img-fluid mdui-center mdui-m-t-5" src="<!--FileDownUrl-->" />
 <br><div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">下載網址</label>
-    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="<!--FileEncodeReplaceUrl-->"/>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="<!--FileDownUrl-->"/>
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
-    <textarea class="mdui-textfield-input mdui-text-color-theme-300"><img src="<!--FileEncodeReplaceUrl-->" /></textarea>
+    <textarea class="mdui-textfield-input mdui-text-color-theme-300"><img src="<!--FileDownUrl-->" /></textarea>
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">Markdown 引用網址</label>
-    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="![](<!--FileEncodeReplaceUrl-->)"/>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="![](<!--FileDownUrl-->)"/>
   </div>
 <!--IsimgFileEnd-->
  <!--IsmusicFileStart-->
@@ -434,20 +434,21 @@ function setMarkdown(text,el) {
     javascript:file_video("<!--FileDownUrl-->")
   </video>
   <div id="video-info"><br>
-      <div class="mdui-text-color-theme-accent mdui-text-center" href="/">
+      <div class="mdui-text-color-theme-accent mdui-text-center" href="/" onload="loadVideoOpts()">
         若未顯示外部播放選單，請重新整理。
       </div>
   </div>
   </div>
 <script>
-  function CopyToClipboard() {
+function CopyToClipboard() {
     navigator.clipboard.writeText(url).then(function() {
       console.log('Async: Copying to clipboard was successful!');
     }, function(err) {
       console.error('Async: Could not copy text: ', err);
     });
     mdui.snackbar('已複製到剪貼簿!');
-  }
+}
+function loadVideoOpts(){
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
@@ -484,6 +485,7 @@ function setMarkdown(text,el) {
     <textarea class="mdui-textfield-input mdui-text-color-theme-300"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
   document.getElementById("video-info").innerHTML = content;
+}
 </script>
 
 
