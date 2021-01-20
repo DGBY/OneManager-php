@@ -402,7 +402,7 @@ function setMarkdown(text,el) {
 <img class="mdui-img-fluid mdui-center mdui-m-t-5" src="<!--FileDownUrl-->" />
 <br><div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">下載網址</label>
-    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="<!--FileDownUrl-->"/>
+    <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" id="url" value="<!--FileDownUrl-->"/>
   </div>
   <div class="mdui-textfield">
     <label class="mdui-textfield-label mdui-text-color-theme-accent">HTML 引用網址</label>
@@ -412,6 +412,12 @@ function setMarkdown(text,el) {
     <label class="mdui-textfield-label mdui-text-color-theme-accent">Markdown 引用網址</label>
     <input class="mdui-textfield-input mdui-text-color-theme-300" type="text" value="![](<!--FileDownUrl-->)"/>
   </div>
+<script>
+  var $url = document.getElementById('url');
+  if ($url) {
+    $url.value = location.protocol + '//' + location.host + $url.value;
+    }
+</script>
 <!--IsimgFileEnd-->
  <!--IsmusicFileStart-->
 <audio
