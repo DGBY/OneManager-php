@@ -434,7 +434,7 @@ function setMarkdown(text,el) {
     javascript:file_video("<!--FileDownUrl-->")
   </video>
   <div id="video-info"><br>
-      <div class="mdui-text-color-theme-accent mdui-text-center" href="/" onload="loadVideoOpts()">
+      <div class="mdui-text-color-theme-accent mdui-text-center" href="/" onload="loadVideoOpts();">
         若未顯示外部播放選單，請重新整理。
       </div>
   </div>
@@ -448,7 +448,7 @@ function CopyToClipboard() {
     });
     mdui.snackbar('已複製到剪貼簿!');
 }
-function loadVideoOpts(){
+function loadVideoOpts() {
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
