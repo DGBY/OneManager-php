@@ -424,6 +424,11 @@ function setMarkdown(text,el) {
 <!--IsmusicFileEnd-->
 
   <!--IsvideoFileStart-->
+<script>
+function onloadTest() {
+  alert("onloadTest");
+</script>
+
   <div class="mdui-container-fluid"><br>
   <video class="mdui-video-fluid mdui-center" controls style="margin-top: 20px">
     <source src="<!--FileDownUrl-->" />
@@ -433,8 +438,8 @@ function setMarkdown(text,el) {
     </p>
     javascript:file_video("<!--FileDownUrl-->")
   </video>
-  <div id="video-info"><br>
-      <div class="mdui-text-color-theme-accent mdui-text-center" href="/" onload="loadVideoOpts();">
+  <div id="video-info" onload="onloadTest();"><br>
+      <div class="mdui-text-color-theme-accent mdui-text-center" href="/" >
         若未顯示外部播放選單，請重新整理。
       </div>
   </div>
@@ -448,7 +453,6 @@ function CopyToClipboard() {
     });
     mdui.snackbar('已複製到剪貼簿!');
 }
-function loadVideoOpts() {
   var baseUrl = window.location.origin;
   var url = `${baseUrl}<!--FileDownUrl-->`
   let player_items = [
@@ -485,7 +489,6 @@ function loadVideoOpts() {
     <textarea class="mdui-textfield-input mdui-text-color-theme-300"><video><source src="${url}" type="video/mp4"></video></textarea>
   </div>`;
   document.getElementById("video-info").innerHTML = content;
-}
 </script>
 
 
