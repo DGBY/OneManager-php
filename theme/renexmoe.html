@@ -21,11 +21,11 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <script>
 function setMarkdown(text,el) {
-  var conv = new showdown.Converter();
+  var defaultOpts = showdown.getDefaultOptions();
+  var conv = new showdown.Converter(defaultOpts);
   console.log(text);
   document.getElementById(el).innerHTML = conv.makeHtml(text);
 }
-
 </script>
 <!--BackgroundStart-->
 <style>
